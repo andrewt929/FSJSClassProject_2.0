@@ -1,0 +1,23 @@
+{
+  "name": "code-louisville-class-project",
+  "version": "1.0.0",
+  "description": "An image search engine for code lousivile FSJS class",
+  "main": "index.js",
+  "dependencies": {
+    "latest": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewt929/CL-FSJSProject_v2.0.git"
+  },
+  "author": "Andrew Taylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewt929/CL-FSJSProject_v2.0/issues"
+  },
+  "homepage": "https://github.com/andrewt929/CL-FSJSProject_v2.0#readme"
+}
