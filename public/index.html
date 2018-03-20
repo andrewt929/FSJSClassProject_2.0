@@ -3,15 +3,58 @@
   <head>
     <meta charset="utf-8">
     <title>Our Glorious Node Project</title>
+    <!-- Bring in bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
       <h1>A wild webpage appears...</h1>
+      <!-- Create a list of fake data -->
+      <div id="list-container"></div> 
     </div>
 
     <!-- Bring in jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bring in handlebars -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          const data = { name: "Code Louisvillains" }
+          const greetingTemplate = 'Hello {{name}}! I am a template!';
+          const greetingCompiled = Handlebars.compile(greetingTemplate);
+          const greetingRendered = greetingCompiled(data);
+      
+          $('body h1').first().after(greetingRendered);
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+            const data = {
+                list: [
+                {name: 'Buffy', value: 'Slayer, guidance counselor'},
+                {name: 'Willow', value: 'Witch'},
+                {name: 'Xander', value: 'Dude, construction worker'},
+                {name: 'Giles', value: 'Watcher, Librarian'},
+                ],
+            };
+            // Compile template and render to container
+            const template = $('#list-template').html();
+            const compiled = Handlebars.compile(template);
+            $('#list-container').html(compiled(data));
+        });
+      </script>
+
+    <!-- Create a template for each item -->
+    <script id="list-template" type="text/x-handlebars-template">
+        {{#each list}}
+        <div class="row">
+        <div class="col-xs-6"><strong>{{name}}</strong></div>
+        <div class="col-xs-6">{{value}}</div>
+        </div>
+        {{/each}}
+    </script> 
+
   </body>
 </html>
