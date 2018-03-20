@@ -6,4 +6,4 @@ router.use('/doc', function(req, res, next) {
     res.end(`Documentation http://expressjs.com/`);
   });
   
-  module.exports = router;
+module.exports = router;
